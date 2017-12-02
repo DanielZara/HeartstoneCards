@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import CardComponent from "./CardComponent";
-import key from "../key";
+import {keyMashape} from "./key";
 
 //Jezeli chcesz latwo przechodzi po komponentach używaj skrutu ctrl + klik na element.
 // Aby szybciej pracoac zywaj skrótu ctrl + tab aby wrócić do poprzedniego pliku.
@@ -13,7 +13,7 @@ export default class App extends Component {
     constructor(){
         super();
 
-        console.log(process.env.SOME_ENV_VAR)
+        console.log(keyMashape)
         //Deklarujemy początkowy stan komponentu
         this.state = {cards:[]};
         //Wywołujemy pobieranie kart.
@@ -39,7 +39,7 @@ export default class App extends Component {
         //this.state.cards to tablica.
         //prototyp tablicy w es6 posiada metode map.
         //Zapoznaj sie z dokumentacja w google ( Array prototype map )
-       return this.state.cards.map(card=><div><CardComponent card={card}/></div>)
+        return this.state.cards.map(card=><div><CardComponent card={card}/></div>)
     }
 
     /**
@@ -56,10 +56,10 @@ export default class App extends Component {
         // catch to funkca która jako parametr otrzymuje błąd ( w wypadku niepowodzenia pobrania danych )
         fetch('https://omgvamp-hearthstone-v1.p.mashape.com/cards/qualities/Legendary',
             {mode: 'cors', headers: {
-                "X-Mashape-Key":key,
+                    "X-Mashape-Key":keyMashape,
                     "Accept": "application/json"
                 }})
-            //Jezeli mamy dane to wtedy zapisujemy je do state
+        //Jezeli mamy dane to wtedy zapisujemy je do state
             .then((data)=>{
                 data.json().then(cards=>{
                     //Zapisanie kard do stanu.
