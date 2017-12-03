@@ -7,8 +7,10 @@ import './App.css';
 export default class DescriptionComponent extends Component {
     render() {
         return (
-            <div style={{width:500, height:500}}>
-               {this.props.text}
+            <div style={{width: 500, height: 500}}>
+                {this.props.card.name}
+                <br/>
+                {this.props.card.cardSet}
             </div>
         );
     }

@@ -20,7 +20,7 @@ export default class CardComponent extends Component {
                     {/*Property onError to funkcja ktora wykonuje metde na tym obiekcie, w tym wypadku this.onImgError()*/}
                     <ImgComponent onError={()=>this.onImgError()} img={this.props.card.img}/>
                     {/*Property text to property DescriptionComponent*/}
-                    <DescriptionComponent text={this.props.card.name}/>
+                    <DescriptionComponent card={this.props.card}/>
                 </div>
             );
         else return null;
