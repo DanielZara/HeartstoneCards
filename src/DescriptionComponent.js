@@ -8,9 +8,11 @@ export default class DescriptionComponent extends Component {
     render() {
         return (
             <div style={{width: 500, height: 500}}>
-                {this.props.card.name}
+                Name: {this.props.card.name}
                 <br/>
-                {this.props.card.cardSet}
+                Card set: {this.props.card.cardSet}
+                <br/>
+                Text: {this.props.card.text}
             </div>
         );
     }
