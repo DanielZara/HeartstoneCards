@@ -1,0 +1,8 @@
+.cards-display {
+    background-color: #ffcf4f;
+    width: 310px;
+    box-shadow: 5px 5px 10px #d5b56d;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 2px solid #f7a224
+}
