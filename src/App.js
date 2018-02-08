@@ -18,7 +18,6 @@ export default class App extends Component {
         this.fetchCard();
     }
 
-
     render() {
         return (
             <div>
@@ -27,13 +26,11 @@ export default class App extends Component {
         );
     }
 
-
     renderCards(){
 
         return this.state.cards.slice(130, 150).map(card=>
             <div><CardComponent card={card}/></div>)
     }
-
 
     fetchCard(){
 
