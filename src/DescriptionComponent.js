@@ -37,8 +37,7 @@ export default class DescriptionComponent extends Component {
 
     factionVisible () {
         if (this.props.card.faction) {
-            return (<span><b className="tooltip">Faction:<span className="tooltiptext">
-                The faction of the card. Example values: Alliance, Horde, Neutral.</span>
+            return (<span><b className="tooltip">Faction:<span className="tooltiptext">{tooltips.factionInfo}</span>
             </b>{this.props.card.faction}<br/></span>);
         }
     }
@@ -49,24 +48,21 @@ export default class DescriptionComponent extends Component {
 
     flavorVisible () {
         if (this.props.card.flavor) {
-            return (<span><b className="tooltip">Flavor: <span className="tooltiptext">
-                The flavor text of the card.</span>
+            return (<span><b className="tooltip">Flavor: <span className="tooltiptext">{tooltips.flavorInfo}</span>
             </b> <span className="flavor" dangerouslySetInnerHTML={{__html: this.props.card.flavor}}></span><br/></span>);
         }
     }
 
     descryptionVisible () {
         if (this.props.card.text) {
-            return (<span><b className="tooltip">Descryption: <span className="tooltiptext">
-                The text of the card when it is in your hand.</span>
+            return (<span><b className="tooltip">Descryption: <span className="tooltiptext">{tooltips.textInfo}</span>
             </b> <span dangerouslySetInnerHTML={{__html: this.props.card.text}}></span><br/></span>);
         }
     }
 
     attackVisible () {
         if (this.props.card.attack) {
-            return (<span><b className="tooltip">Attack: <span className="tooltiptext">
-                The attack of the card.</span></b>
+            return (<span><b className="tooltip">Attack: <span className="tooltiptext">{tooltips.attackInfo}</span></b>
                 &nbsp; <img alt="Attack" height="14" src="http://hearthstoneapi.com/images/icons/attack.png"/><b> </b>
                 {this.props.card.attack}<br/></span>);
         }
@@ -74,8 +70,7 @@ export default class DescriptionComponent extends Component {
 
     healthVisible () {
         if (this.props.card.health) {
-            return (<span><b className="tooltip">Health: <span className="tooltiptext">
-                The health of the card.</span></b>
+            return (<span><b className="tooltip">Health: <span className="tooltiptext">{tooltips.healthInfo}</span></b>
                 &nbsp; <img alt="Health" height="14" src="http://hearthstoneapi.com/images/icons/health.png"/><b> </b>
                 {this.props.card.health}<br/></span>);
         }
@@ -84,37 +79,36 @@ export default class DescriptionComponent extends Component {
     artistVisible () {
         if (this.props.card.artist) {
             return (<span><b className="tooltip">Artist:<span className="tooltiptext">
-                The artist of the card.</span></b> {this.props.card.artist}<br/></span>);
+                {tooltips.artistInfo}</span></b> {this.props.card.artist}<br/></span>);
         }
     }
 
     eliteVisible () { // metoda wyświetlająca elite yes/no
         if (this.props.card.elite) {
             return (<span><b className="tooltip">Elite:<span className="tooltiptext">
-                Indicates if the card is elite.</span></b> Yes<br/></span>);
+                {tooltips.eliteInfo}</span></b> Yes<br/></span>);
         }else{return (<span><b className="tooltip">Elite:<span className="tooltiptext">
-                Indicates if the card is elite.</span></b> No<br/></span>);}
+                {tooltips.eliteInfo}</span></b> No<br/></span>);}
     }
 
     collectibleVisible () { // metoda wyświetlająca collectible yes/no
         if (this.props.card.collectible) {
             return (<span><b className="tooltip">Collectible:<span className="tooltiptext">
-                Indicates if the card is collectible.</span></b> Yes<br/></span>)
+                {tooltips.collectibleInfo}</span></b> Yes<br/></span>)
         }else{return (<span><b className="tooltip">Collectible:<span className="tooltiptext">
-                Indicates if the card is collectible.</span></b> No<br/></span>)}
+                {tooltips.collectibleInfo}</span></b> No<br/></span>)}
     }
 
     durabilityVisible () {
         if (this.props.card.durability) {
             return (<span><b className="tooltip">Durability:<span className="tooltiptext">
-                The durability of the card. Used for Weapons.</span></b> {this.props.card.durability}<br/></span>);
+                {tooltips.durabilityInfo}</span></b> {this.props.card.durability}<br/></span>);
         }
     }
 
     armorVisible () {
         if (this.props.card.armor) {
-            return (<span><b className="tooltip">Armor:<span className="tooltiptext">
-                The armor of the card. Seen on hero cards from the Knights of the Frozen Throne expansion.
+            return (<span><b className="tooltip">Armor:<span className="tooltiptext">{tooltips.armorInfo}
             </span></b> {this.props.card.armor}<br/></span>);
         }
     }
@@ -122,24 +116,20 @@ export default class DescriptionComponent extends Component {
     inPlayTextVisible () {
         if (this.props.card.inPlayText) {
             return (<span><b className="tooltip">In play text:<span className="tooltiptext">
-                The text of the card when it is in play.</span></b> {this.props.card.inPlayText}<br/></span>);
+                {tooltips.inPlayTextInfo}</span></b> {this.props.card.inPlayText}<br/></span>);
         }
     }
 
     raceVisible () {
         if (this.props.card.race) {
-            return (<span><b className="tooltip">Race:<span className="tooltiptext">
-                The race of the card. Example values: Murloc, Demon, Beast, Totem, Pirate, Dragon.
+            return (<span><b className="tooltip">Race:<span className="tooltiptext">{tooltips.raceInfo}
             </span></b> {this.props.card.race}<br/></span>);
         }
     }
 
     multiClassGroupVisible () {
         if (this.props.card.multiClassGroup) {
-            return (<span><b className="tooltip">Crime family:<span className="tooltiptext">
-                Indicates that this card belongs to multiple classes.
-                First introduced in the Mean Streets of Gadgetzan expansion.
-                Example values: Grimy Goons, Jade Lotus, Kabal.
+            return (<span><b className="tooltip">Crime family:<span className="tooltiptext">{tooltips.multiClassGroupInfo}
             </span></b> {this.props.card.multiClassGroup}<br/></span>);
         }
     }
@@ -147,9 +137,7 @@ export default class DescriptionComponent extends Component {
     classesVisible () {
         if (this.props.card.classes) {
             return (<span><b className="tooltip">Belongs to classes:<span className="tooltiptext">
-                Indicates which classes this card belongs to.
-                Only applies to multi class cards.
-                Example value for a Kabal tri-class card: Mage, Priest, Warlock.
+                {tooltips.classesInfo}
             </span></b> {this.props.card.classes}<br/></span>);
         }
     }
@@ -157,8 +145,7 @@ export default class DescriptionComponent extends Component {
     howToGetVisible () {
         if (this.props.card.howToGet) {
             return (<span><b className="tooltip">How to get:<span className="tooltiptext">
-                How to get this card.
-                Only present if you can obtain this card from a method other than opening a booster pack.
+                {tooltips.howToGetInfo}
             </span></b> {this.props.card.howToGet}<br/></span>);
         }
     }
@@ -166,8 +153,7 @@ export default class DescriptionComponent extends Component {
     howToGetGoldVisible () {
         if (this.props.card.howToGetGold) {
             return (<span><b className="tooltip">How to get gold version:<span className="tooltiptext">
-                How to get the gold version of this card.
-                Only present if you can obtain this card from a method other than opening a booster pack.
+                {tooltips.howToGetGoldInfo}
             </span></b> {this.props.card.howToGetGold}<br/></span>);
         }
     }
@@ -180,28 +166,23 @@ export default class DescriptionComponent extends Component {
         if (this.props.card.rarity) {
             switch(this.props.card.rarity) {
                 case "Free":
-                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">
-                The rarity of the card.Example values: Free, Common, Rare, Epic, Legendary.
+                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">{tooltips.rarityInfo}
                     </span></b><span className="rarity-free"> {this.props.card.rarity}<br/></span></span>);
                     break;
                 case "Common":
-                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">
-                The rarity of the card. Example values: Free, Common, Rare, Epic, Legendary.
+                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">{tooltips.rarityInfo}
                     </span></b><span className="rarity-common"> {this.props.card.rarity}<br/></span></span>);
                     break;
                 case "Rare":
-                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">
-                The rarity of the card. Example values: Free, Common, Rare, Epic, Legendary.
+                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">{tooltips.rarityInfo}
                     </span></b><span className="rarity-rare"> {this.props.card.rarity}<br/></span></span>);
                     break;
                 case "Epic":
-                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">
-                The rarity of the card. Example values: Free, Common, Rare, Epic, Legendary.
+                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">{tooltips.rarityInfo}
                     </span></b><span className="rarity-epic"> {this.props.card.rarity}<br/></span></span>);
                     break;
                 case "Legendary":
-                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">
-                The rarity of the card. Example values: Free, Common, Rare, Epic, Legendary.
+                    return (<span><b className="tooltip">Rarity: <span className="tooltiptext">{tooltips.rarityInfo}
                     </span></b><span className="rarity-legendary"> {this.props.card.rarity}<br/></span></span>);
                     break;
                 default:
@@ -219,12 +200,12 @@ export default class DescriptionComponent extends Component {
        return (
             <div className="description-display">
 
-                <b className="tooltip">Name:<span className="tooltiptext">The card name.
+                <b className="tooltip">Name:<span className="tooltiptext">{tooltips.nameInfo}
                 </span></b> <b className="card-name">{this.props.card.name}</b>
                 <br/>
 
                 <b className="tooltip">Card set:<span className="tooltiptext">
-                The set name.</span></b> {this.props.card.cardSet}
+                    {tooltips.cardSetInfo}</span></b> {this.props.card.cardSet}
                 <br/>
 
                 {this.descryptionVisible()}
@@ -258,7 +239,7 @@ export default class DescriptionComponent extends Component {
                 {this.eliteVisible()}
 
                 <b className="tooltip">Player class:<span className="tooltiptext">
-                The player class this card belongs to. Example values: Druid, Hunter, Mage, Paladin.
+                    {tooltips.playerClassInfo}
                 </span></b> {this.props.card.playerClass}
                 <br/>
 
