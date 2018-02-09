@@ -28,6 +28,8 @@ const tooltips = {
     howToGetGoldInfo: "How to get the gold version of this card. Only present if you can obtain this card from a method other than opening a booster pack."
 };
 
+const notching = {};
+
 export default class DescriptionComponent extends Component {
 
     /**
