@@ -13,26 +13,40 @@ export default class App extends Component {
 
         console.log(keyMashape)
 
-        this.state = {cards:[]};
+        this.state = {
+            epicCards:[],
+            search: ""
+        };
 
-        this.fetchCard();
+        this.fetchEpicCards();
+    }
+
+    handleSearch = (event) => {
+        this.setState({
+            search: event.target.value,
+            cards: this.state.cards.filter((card) => new RegExp(event.target.value, "i").exec(card.name))
+        });
     }
 
     render() {
         return (
             <div>
-                {this.renderCards()}
+                {this.renderEpicCards()}
+                {/*{this.renderLegendaryCards()}*/}
+
             </div>
         );
     }
 
-    renderCards(){
+    renderEpicCards(){
 
-        return this.state.cards.slice(130, 150).map(card=>
-            <div><CardComponent card={card}/></div>)
+        return this.state.epicCards.slice(104, 107).map(card=><CardComponent
+            key={card.cardId}
+            card={card}/>)
+
     }
 
-    fetchCard(){
+    fetchEpicCards(){
 
         //fetch zwraca Promise - zapraszam do zapoznania sie z promisami w internecie.
 
@@ -41,11 +55,13 @@ export default class App extends Component {
                     "X-Mashape-Key":keyMashape,
                     "Accept": "application/json"
                 }})
-            .then((data)=>{
-                data.json().then(cards=>{
-                    this.setState({cards:cards});
+            .then((data)=>{data.json()
+                .then(epicCards=>{this.setState({epicCards:epicCards});
                 });
 
             })
     }
+
+
+
 }
