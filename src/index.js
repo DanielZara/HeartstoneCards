@@ -15,7 +15,7 @@ ReactDOM.render(
         </div>
 
         <div className="guide">Hover over card to see cards golden version and characteristics</div>
-        <div className="cards-grid">
+        <div className="flex-grid">
         <App className="grid-items" />
         </div>
     </div>,
