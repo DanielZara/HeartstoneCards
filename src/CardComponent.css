@@ -1,28 +1,37 @@
 .container {
-    max-width: 1100px;
+    max-width: 635px;
     margin: 10px ;
     background-color: #ffdb69;
     align-items: center;
     padding: 10px;
+
+}
+
+.container-mouse-out {
+    max-width: 315px;
+    margin: 10px ;
+    background-color: #ffdb69;
+    align-items: center;
+    padding: 10px;
+
 }
 
 .cards-component {
     padding: 10px;
-    flex-basis: 30%;
-
 }
+
 
 .descryption-component {
     padding: 20px;
     margin-bottom: 20px;
-    position: center;
-    flex-basis: 30%;
+    position: absolute;
+
 
 }
 
-@media (min-width:800px) {
+@media (min-width:700px) {
     .container {
         display: flex;
-        justify-content: space-between;
+
     }
 }
