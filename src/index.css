@@ -3,3 +3,30 @@
   padding: 0;
   font-family: sans-serif;
 }
+
+.guide {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.cards-grid {
+  display: flex;
+}
+
+.grid-items {
+  flex-direction: row;
+}
+
+.search {
+  padding: 10px;
+  margin-right: 5px;
+  font-family: sans-serif;
+}
+
+.search input {
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+  color: #999;
+  padding-left: 5px;
+}
