@@ -3,6 +3,13 @@
     width: 310px;
     box-shadow: 5px 5px 10px #d5b56d;
     margin-top: 5px;
+    margin-right: 5px;
     border-radius: 10px;
-    border: 2px solid #f7a224
+    border: 2px solid #f7a224;
+    cursor: pointer;
 }
+
+.cards-display:hover {
+    opacity: 0.95;
+}
+
