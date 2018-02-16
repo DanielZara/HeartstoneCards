@@ -13,22 +13,29 @@ const tooltips = {
     attackInfo:	"The attack of the card.",
     healthInfo:	"The health of the card.",
     durabilityInfo:	"The durability of the card. Used for Weapons.",
-    armorInfo: "The armor of the card. Seen on hero cards from the Knights of the Frozen Throne expansion.",
+    armorInfo: "The armor of the card. Seen on hero cards from" +
+    " the Knights of the Frozen Throne expansion.",
     textInfo: "The text of the card when it is in your hand.",
     inPlayTextInfo: "The text of the card when it is in play.",
     flavorInfo: "The flavor text of the card.",
     artistInfo: "The artist of the card.",
     collectibleInfo: "Indicates if the card is collectible.",
     eliteInfo: "Indicates if the card is elite.",
-    raceInfo: "The race of the card. Example values: Murloc, Demon, Beast, Totem, Pirate, Dragon.",
-    playerClassInfo: "The player class this card belongs to. Example values: Druid, Hunter, Mage, Paladin.",
-    multiClassGroupInfo: "Indicates that this card belongs to multiple classes. First introduced in the Mean Streets of Gadgetzan expansion. Example values: Grimy Goons, Jade Lotus, Kabal.",
-    classesInfo: "Indicates which classes this card belongs to. Only applies to multi class cards. Example value for a Kabal tri-class card: Mage, Priest, Warlock.",
-    howToGetInfo: "How to get this card. Only present if you can obtain this card from a method other than opening a booster pack.",
-    howToGetGoldInfo: "How to get the gold version of this card. Only present if you can obtain this card from a method other than opening a booster pack."
+    raceInfo: "The race of the card. Example values:" +
+    " Murloc, Demon, Beast, Totem, Pirate, Dragon.",
+    playerClassInfo: "The player class this card belongs to. Example values: " +
+    "Druid, Hunter, Mage, Paladin.",
+    multiClassGroupInfo: "Indicates that this card belongs to multiple classes." +
+    " First introduced in the Mean Streets of Gadgetzan expansion. Example values: Grimy Goons, Jade Lotus, Kabal.",
+    classesInfo: "Indicates which classes this card belongs to. Only applies " +
+    "to multi class cards. Example value for a Kabal tri-class card: Mage, Priest, Warlock.",
+    howToGetInfo: "How to get this card. Only present if you can obtain this" +
+    " card from a method other than opening a booster pack.",
+    howToGetGoldInfo: "How to get the gold version of this card. Only present " +
+    "if you can obtain this card from a method other than opening a booster pack."
 };
 
-const notching = {};
+
 
 export default class DescriptionComponent extends Component {
 
@@ -45,7 +52,8 @@ export default class DescriptionComponent extends Component {
     }
 
     /**
-     * Własciwość flavor i text zawiera w sobie HTML więc wewnętrzny tekst trzeba było wyciągnać przez dangerouslySetInnerHTML
+     * Własciwość flavor i text zawiera w sobie HTML więc wewnętrzny
+     * tekst trzeba było wyciągnać przez dangerouslySetInnerHTML
      */
 
     flavorVisible () {
@@ -195,7 +203,8 @@ export default class DescriptionComponent extends Component {
     }
 
     /**
-     * Render wyświetlający wszystkie własciwości z czego niektóre to html a niektóre wywołania metod. Właściwości w HTML pojawiają się w każdej karcie.
+     * Render wyświetlający wszystkie własciwości z czego niektóre to html a niektóre wywołania metod.
+     * Właściwości w HTML pojawiają się w każdej karcie.
      */
 
     render() {
@@ -225,7 +234,8 @@ export default class DescriptionComponent extends Component {
 
                 <b className="tooltip">Cost: <span className="tooltiptext">
                 The mana cost of this card.</span></b>
-                &nbsp; <img alt="Cost" height="10" src="http://hearthstoneapi.com/images/icons/mana-crystal.png"/> {this.props.card.cost}
+                &nbsp; <img alt="Cost" height="10" src="http://hearthstoneapi.com/images/icons/mana-crystal.png"/>
+                {this.props.card.cost}
                 <br/>
 
                 {this.attackVisible()}
